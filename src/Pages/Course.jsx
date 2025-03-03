@@ -3,7 +3,7 @@ import Branch from '../Component/Cards/Branch';
 import Semester from '../Component/Cards/Semester';
 import { useNavigate, useParams } from 'react-router-dom';
 import cse_img from "../Assets/cse_img.jpg";
-it_img from "../Assets/it_img.jpg";
+import it_img from "../Assets/it_img.jpg";
 import ece_img from "../Assets/ece_img.jpg";
 import aiml_img from "../Assets/aiml_img.jpg";
 import me_img from "../Assets/mech_img.jpg";
@@ -30,12 +30,12 @@ const Course = () => {
         if (!branchRoute) {
             alert("Please select a branch first!");
         } else {
-            navigate(`${branchRoute}/sem${index + 1}`);
+            navigate(${branchRoute}/sem${index + 1});
         }
     };
 
     const selectBranch = (elem) => {
-        setBranchRoute(`/choice/${id}/${elem.name.toLowerCase()}`);
+        setBranchRoute(/choice/${id}/${elem.name.toLowerCase()});
         setSelectedBranch(elem.name.toUpperCase());
         window.scrollTo({ top: 500, behavior: "smooth" });
     };
@@ -52,10 +52,10 @@ const Course = () => {
             
             <div>
                 <h2 className='text-2xl sm:text-3xl font-semibold text-gray-300 mb-5'>Select Your Branch</h2>
-                <div className='grid grid-cols-3 gap-6 sm:gap-8'>
+                <div className='grid grid-cols-3 gap-4 sm:gap-6'>
                     {branchName.map((elem, index) => (
                         <div key={index} onClick={() => selectBranch(elem)} 
-                             className={`cursor-pointer transition-transform transform hover:scale-110 ${elem.name === selectedBranch ? "opacity-50" : ""}`}>
+                             className={cursor-pointer transition-transform transform hover:scale-110 ${elem.name === selectedBranch ? "opacity-50" : ""}}>
                             <Branch elem={elem} selectedBranch={selectedBranch} />
                         </div>
                     ))}
@@ -79,3 +79,4 @@ const Course = () => {
 };
 
 export default Course
+
